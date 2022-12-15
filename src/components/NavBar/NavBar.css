@@ -1,0 +1,45 @@
+.container.navigation {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+nav.navbar.navbar-expand-lg {
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: #edf0f0;
+}
+
+.container-fluid{
+    display: initial;
+}
+
+p.navbar-text {
+    font-size: larger;
+    font-weight: bold;
+    color: black;
+    margin-top: 10px;
+    margin-right: 50%;
+}
+
+
+button.btn.btn-primary {
+    font-weight: bold;
+    font-family: sans-serif;
+    /* background: linear-gradient(135deg, #184e68 0%,#22636c 100%); */
+    border: none;
+}
+
+button:hover{
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 700px){
+    button.btn.btn-primary {
+    font-size: smaller;
+}
+  p.navbar-text {
+    margin-right: 10%;
+    font-size: medium;
+}
+}

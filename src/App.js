@@ -1,9 +1,10 @@
 import './App.css';
+import Layout from "./components/Layout/Layout"
 
 function App() {
   return (
     <div className="App">
-    <button className="btn btn-dark"></button>
+      <Layout/>
     </div>
   );
 }
