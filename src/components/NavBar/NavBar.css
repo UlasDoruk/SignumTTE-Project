@@ -14,11 +14,10 @@ nav.navbar.navbar-expand-lg {
     display: initial;
 }
 
-p.navbar-text {
+a.navbar-text {
     font-size: larger;
     font-weight: bold;
     color: black;
-    margin-top: 10px;
     margin-right: 50%;
 }
 
@@ -26,8 +25,8 @@ p.navbar-text {
 button.btn.btn-primary {
     font-weight: bold;
     font-family: sans-serif;
-    /* background: linear-gradient(135deg, #184e68 0%,#22636c 100%); */
     border: none;
+    margin-left: 10px;
 }
 
 button:hover{
@@ -38,8 +37,8 @@ button:hover{
     button.btn.btn-primary {
     font-size: smaller;
 }
-  p.navbar-text {
-    margin-right: 10%;
+  a.navbar-text {
+    margin-right: 1%;
     font-size: medium;
 }
 }

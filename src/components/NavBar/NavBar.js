@@ -1,4 +1,4 @@
-import React from 'react'
+import {NavLink} from "react-router-dom"
 import "../NavBar/NavBar.css"
 
 function Navbar() {
@@ -6,11 +6,19 @@ function Navbar() {
     <>
       <div className="container navigation">
         <nav className="navbar navbar-expand-lg ">
-          <p className="navbar-text">Navbar</p>
-          {/*  onClick={()=>{
-                window.scrollTo({top:0,left:0,behaviour:"smooth"})
-            }} */}
-          <button className="btn btn-primary">Go To Top</button>
+          <NavLink
+            to="/"
+            className="navbar-text"
+            style={{ textDecoration: "none" }}
+          >
+            Spotify Project
+          </NavLink>
+          <NavLink to="/PlayList">
+            <button className="btn btn-primary">Playlist</button>
+          </NavLink>
+          <NavLink to="/Categories">
+            <button className="btn btn-primary">Categories</button>
+          </NavLink>
         </nav>
       </div>
     </>
