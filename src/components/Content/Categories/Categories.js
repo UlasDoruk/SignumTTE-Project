@@ -2,13 +2,16 @@ import { useState, useEffect,useContext } from "react";
 import "../Categories/Categories.css"
 import NavBar from "../../NavBar/NavBar";
 import TokenContext from "../../Context/TokenContext";
+import LoadingContext from "../../Context/LoadingContext";
 
 function Categories() {
 
   const { token } = useContext(TokenContext);
   const [data, setData] = useState([]);
+  const { loading, setLoading } = useContext(LoadingContext);  
 
   const loadData = async () => {
+    setLoading(true)
     let response = await fetch(
       "https://api.spotify.com/v1/recommendations/available-genre-seeds",
       {
@@ -21,6 +24,7 @@ function Categories() {
       }
     );
     let data = await response.json();
+    setLoading(false)
     setData(data.genres)
   };
 
@@ -31,22 +35,26 @@ function Categories() {
 
   return (
     <>
-    <NavBar/>
-      <div className="row">
-        {data.map((item, index) => {
-          return (
-            <div className="col-2" key={index}>
-              <div className="card categories">
-                <div className="card-body">
-                  <h5 className="card-title" style={{ fontWeight: "bold" }}>
-                    {item}
-                  </h5>
+      <NavBar />
+      {loading ? (
+        <p style={{ color: "white" }}>Loading...</p>
+      ) : (
+        <div className="row">
+          {data.map((item, index) => {
+            return (
+              <div className="col-2" key={index}>
+                <div className="card categories">
+                  <div className="card-body">
+                    <h5 className="card-title" style={{ fontWeight: "bold" }}>
+                      {item}
+                    </h5>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      )}
     </>
   );
 }

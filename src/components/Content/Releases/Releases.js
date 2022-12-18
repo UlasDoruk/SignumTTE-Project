@@ -2,13 +2,16 @@ import { useState, useEffect, useContext } from "react";
 import "../Releases/Releases.css"
 import NavBar from "../../NavBar/NavBar"
 import TokenContext from "../../Context/TokenContext";
+import LoadingContext from "../../Context/LoadingContext";
 
 function Layout() {
 
   const {token} = useContext(TokenContext)
   const [data, setData] = useState([]);
+  const { loading, setLoading } = useContext(LoadingContext);
 
   const loadData = async () => {
+    setLoading(true)
     let response = await fetch(
       "https://api.spotify.com/v1/browse/new-releases?country=SE&limit=48&offset=5",
       {
@@ -21,6 +24,7 @@ function Layout() {
       }
     );
     let data = await response.json();
+    setLoading(false)
     setData(data.albums.items)
   };
 
@@ -31,7 +35,10 @@ function Layout() {
   
   return (
     <>
-    <NavBar/>
+      <NavBar />
+      {loading ? (
+        <p style={{color:"white"}}>Loading...</p>
+      ) : (
         <div className="row">
           {data.map((item, index) => {
             return (
@@ -49,6 +56,7 @@ function Layout() {
             );
           })}
         </div>
+      )}
     </>
   );
 }
