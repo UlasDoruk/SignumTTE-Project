@@ -1,6 +1,7 @@
 import { useState, useEffect,useContext } from "react";
+import "../Categories/Categories.css"
+import NavBar from "../../NavBar/NavBar";
 import TokenContext from "../../Context/TokenContext";
-import Navbar from "../../NavBar/NavBar";
 
 function Categories() {
 
@@ -30,7 +31,7 @@ function Categories() {
 
   return (
     <>
-      <Navbar />
+    <NavBar/>
       <div className="row">
         {data.map((item, index) => {
           return (

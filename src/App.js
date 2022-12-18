@@ -4,7 +4,7 @@ import { ShareToken } from "./components/Context/TokenContext";
 import Releases from "./components/Content/Releases/Releases"
 import PlayList from './components/Content/PlayList/PlayList';
 import Categories from './components/Content/Categories/Categories';
-import Login from './components/Login/Login';
+import LoginPage from './components/Content/Login/LoginPage';
 
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <ShareToken>
         <Routes>
-          <Route path="/" element={<Login />}></Route>
+          <Route path='/' element={<LoginPage/>}></Route>
           <Route path="/Releases" element={<Releases />}></Route>
           <Route path="/Playlist" element={<PlayList />}></Route>
           <Route path="/Categories" element={<Categories />}></Route>

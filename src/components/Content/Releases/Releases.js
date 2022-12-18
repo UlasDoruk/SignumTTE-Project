@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react";
+import "../Releases/Releases.css"
+import NavBar from "../../NavBar/NavBar"
 import TokenContext from "../../Context/TokenContext";
-import Navbar from "../../NavBar/NavBar";
 
 function Layout() {
 
@@ -30,12 +31,12 @@ function Layout() {
   
   return (
     <>
-      <Navbar/>
+    <NavBar/>
         <div className="row">
           {data.map((item, index) => {
             return (
               <div className="col-4" key={index}>
-                <div className="card">
+                <div className="card releases">
                   <div className="card-body">
                     <h5 className="card-title" style={{ fontWeight: "bold" }}>
                       {item.name}

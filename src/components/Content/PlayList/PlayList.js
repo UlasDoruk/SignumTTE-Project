@@ -1,6 +1,7 @@
 import { useState, useEffect,useContext} from "react";
+import "../PlayList/PlayList.css"
+import NavBar from "../../NavBar/NavBar";
 import TokenContext from "../../Context/TokenContext";
-import Navbar from "../../NavBar/NavBar"
 
 function PlayList() {
 
@@ -29,17 +30,17 @@ function PlayList() {
 
   return (
     <>
-      <Navbar />
+    <NavBar/>
       <div className="row">
         {data.map((item, index) => {
           return (
             <div className="col-4" key={index}>
-              <div className="card">
+              <div className="card playlist">
                 <div className="card-body">
+                  <img src={item.images[0].url} className="playlistimg"></img>
                   <h5 className="card-title" style={{ fontWeight: "bold" }}>
                     {item.description}
                   </h5>
-                  <img src={item.images[0].url}></img>
                 </div>
               </div>
             </div>
