@@ -1,7 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect,useContext } from "react";
+import TokenContext from "../../Context/TokenContext";
+import Navbar from "../../NavBar/NavBar";
 
 function Categories() {
 
+  const { token } = useContext(TokenContext);
   const [data, setData] = useState([]);
 
   const loadData = async () => {
@@ -12,12 +15,12 @@ function Categories() {
         headers: {
           Accept: "application/json",
           Authorization:
-            "Bearer BQBCLxeQpqns4yaGpE3e5AiqI6FAnpEdJTuCC0bjBtCJmw0_YWnCr6yGuOqnF_iFfuLsBi18HTJpcQpiKV33ax_mm3b24NuxAjCmV95Ga9EFWUZ-ZLhkf9ugrJY1NROeph3fZj3KPK7mkXpot-x6jkq6De6gKYnfWYsnWhENRMWuSHrW",
+            `Bearer ${token}`,
         },
       }
     );
     let data = await response.json();
-    setData(data.genres);
+    setData(data.genres)
   };
 
   useEffect(() => {
@@ -26,7 +29,8 @@ function Categories() {
 
 
   return (
-    <div>
+    <>
+      <Navbar />
       <div className="row">
         {data.map((item, index) => {
           return (
@@ -42,7 +46,7 @@ function Categories() {
           );
         })}
       </div>
-    </div>
+    </>
   );
 }
 

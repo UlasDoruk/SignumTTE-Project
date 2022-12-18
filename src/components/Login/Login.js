@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
+import "../Login/Login.css"
+import TokenContext from "../Context/TokenContext";
 
 function LoginBtn() {
-  const [token, setToken] = useState("");
+
+  const {token,setToken} = useContext(TokenContext);
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -28,20 +31,27 @@ function LoginBtn() {
     window.localStorage.removeItem("token");
   };
 
+  console.log(token)
+
   return (
-    <div>
-      {/* {!token ? (
+    <div className="loginpage">
+      {!token ? (
         <a
-          href={`${process.env.REACT_APP_AUTH_ENDPOINT}client_id=${process.env.REACT_APP_SPOTIFY_CLIENT_ID}&redirect_uri=http://localhost:3000/&response_type=token`}
+          href={`${process.env.REACT_APP_AUTH_ENDPOINT}client_id=${process.env.REACT_APP_SPOTIFY_CLIENT_ID}&redirect_uri=http://localhost:3000/Releases&response_type=token`}
         >
           <button className="btn btn-success" style={{ fontWeight: "bold" }}>
             Login To Spotfiy
           </button>{" "}
         </a>
       ) : (
-        <button className="btn btn-danger"
+        <button
+          className="btn btn-danger"
           style={{ fontWeight: "bold" }}
-          onClick={logout}>{" "}Logout </button> )} */}
+          onClick={logout}
+        >
+          Logout{" "}
+        </button>
+      )}
     </div>
   );
 }

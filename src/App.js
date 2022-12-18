@@ -1,21 +1,23 @@
 import './App.css';
 import { Route,Routes } from 'react-router-dom';
-import Realeases from "./components/Releases/Releases"
-import PlayList from './components/PlayList/PlayList';
-import Categories from './components/Categories/Categories';
-import Navbar from './components/NavBar/NavBar';
-import LoginBtn from './components/LoginBtn/LoginBtn';
+import { ShareToken } from "./components/Context/TokenContext";
+import Releases from "./components/Content/Releases/Releases"
+import PlayList from './components/Content/PlayList/PlayList';
+import Categories from './components/Content/Categories/Categories';
+import Login from './components/Login/Login';
+
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <LoginBtn/>
-      <Routes>
-        <Route path="" element={<Realeases />}></Route>
-        <Route path="/Playlist" element={<PlayList />}></Route>
-        <Route path="/Categories" element={<Categories />}></Route>
-      </Routes>
+      <ShareToken>
+        <Routes>
+          <Route path="/" element={<Login />}></Route>
+          <Route path="/Releases" element={<Releases />}></Route>
+          <Route path="/Playlist" element={<PlayList />}></Route>
+          <Route path="/Categories" element={<Categories />}></Route>
+        </Routes>
+      </ShareToken>
     </div>
   );
 }

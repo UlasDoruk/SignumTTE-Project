@@ -1,7 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect,useContext} from "react";
+import TokenContext from "../../Context/TokenContext";
+import Navbar from "../../NavBar/NavBar"
 
 function PlayList() {
 
+  const { token } = useContext(TokenContext);
   const [data, setData] = useState([]);
 
   const loadData = async () => {
@@ -12,12 +15,12 @@ function PlayList() {
         headers: {
           Accept: "application/json",
           Authorization:
-            "Bearer BQB6oXd0HLV0gcuILeoulhLQScOGs00Hl-y3LaEk3hKssUWmBIDyiVMoGzhsp8q8yzF08J-281axqp997j3KSL8GdprCXrz4r1bZlXqrK4FS_5HHx0Bzc6QCO1OzXSxbpD_HB4psZBo4O-9SRRQdjO8VRJ0lYilshRHt47EqKDH0M4pU",
+            `Bearer ${token}`,
         },
       }
     );
     let data = await response.json();
-    setData(data.playlists.items);
+    setData(data.playlists.items) 
   };
 
   useEffect(() => {
@@ -25,9 +28,10 @@ function PlayList() {
   }, []);
 
   return (
-    <> 
-    <div className="row">
-      {data.map((item, index) => {
+    <>
+      <Navbar />
+      <div className="row">
+        {data.map((item, index) => {
           return (
             <div className="col-4" key={index}>
               <div className="card">
@@ -40,11 +44,10 @@ function PlayList() {
               </div>
             </div>
           );
-      })}
-      
-            </div>
+        })}
+      </div>
     </>
-    )
+  );
 }
 
 export default PlayList

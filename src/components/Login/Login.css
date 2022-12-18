@@ -1,0 +1,17 @@
+.loginpage {
+    background-image: url("https://images.hdqwalls.com/wallpapers/spotify-logo-1y.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+button.btn.btn-success {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+button.btn.btn-danger {
+    margin-top: 20px;
+    margin-left: 30px;
+}

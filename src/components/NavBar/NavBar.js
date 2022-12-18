@@ -7,7 +7,7 @@ function Navbar() {
       <div className="container navigation">
         <nav className="navbar navbar-expand-lg ">
           <NavLink
-            to="/"
+            to="/Releases"
             className="navbar-text"
             style={{ textDecoration: "none" }}
           >
