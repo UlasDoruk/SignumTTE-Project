@@ -1,4 +1,4 @@
-[Here is the link !!!](https://signumtte-spotifyproject.netlify.app/Releases).
+[Here is the link !!!](https://signumtte-spotifyproject.netlify.app).
 
 
 <hr>
