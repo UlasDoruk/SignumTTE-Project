@@ -1,6 +1,8 @@
 import {NavLink} from "react-router-dom"
 import "../NavBar/NavBar.css"
 
+// Yönlendirmeler burada
+
 function Navbar() {
   return (
     <>

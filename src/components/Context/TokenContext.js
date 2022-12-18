@@ -2,6 +2,8 @@ import { createContext, useState,useEffect} from "react";
 
 const TokenContext = createContext()
 
+// Authorization gelen token bilgisini burada componentlere dağıtıyoruz 
+
 export function ShareToken({children}){
 
     const [token,setToken] = useState("")

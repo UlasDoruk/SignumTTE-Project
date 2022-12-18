@@ -10,6 +10,8 @@ function Layout() {
   const [data, setData] = useState([]);
   const { loading, setLoading } = useContext(LoadingContext);
 
+// API call 
+
   const loadData = async () => {
     setLoading(true)
     let response = await fetch(
@@ -32,7 +34,8 @@ function Layout() {
     loadData();
   }, []);
 
-  
+  // JSX bölümü
+
   return (
     <>
       <NavBar />

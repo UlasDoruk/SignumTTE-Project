@@ -10,6 +10,8 @@ function PlayList() {
   const [data, setData] = useState([]);
   const {loading,setLoading} = useContext(LoadingContext)
 
+  // API call
+
   const loadData = async () => {
     setLoading(true)
     let response = await fetch(
