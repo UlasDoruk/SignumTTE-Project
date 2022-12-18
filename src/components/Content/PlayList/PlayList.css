@@ -6,3 +6,40 @@ img.playlistimg {
 .card.playlist {
     margin: 30px;
 }
+.col-4.playlist {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+    display: flex;
+    align-items: stretch;
+}
+.card.playlist {
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width : 800px) {
+    .card.playlist {
+    margin-bottom: 10px;
+    margin: 0px;
+    margin-right: 10px;
+    margin-left: 10px
+}
+h5.card-title {
+    font-size: xx-small;
+    font-weight: 100;
+}
+img.playlistimg {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 0;
+    border-radius: 5px;
+}
+.card-body {
+    display: contents;
+}
+img.playlistimg {
+    width: 100%;
+}
+.col-4.playlist {
+    margin-bottom: 10px;
+}
+}

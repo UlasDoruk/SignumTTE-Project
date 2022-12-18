@@ -1,3 +1,31 @@
 .card.releases {
     margin: 20px;
 }
+
+img.releases.img {
+    width: 100%;
+    padding: 30px;
+}
+
+.col-4.releases {
+    display: grid;
+}
+
+@media screen and (max-width:800px) {
+.card.releases {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+h5.card-title {
+    font-size: xx-small;
+    font-weight: 100;
+
+}
+img.releases.img {
+    width: 100%;
+    padding: 0px;
+    border-radius: 5px;
+}
+}
+

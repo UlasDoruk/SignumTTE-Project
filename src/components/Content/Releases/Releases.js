@@ -42,14 +42,14 @@ function Layout() {
         <div className="row">
           {data.map((item, index) => {
             return (
-              <div className="col-4" key={index}>
+              <div className="col-4 releases" key={index}>
                 <div className="card releases">
                   <div className="card-body">
                     <h5 className="card-title" style={{ fontWeight: "bold" }}>
                       {item.name}
                     </h5>
                     <h6>{item.album_type}</h6>
-                    <img src={item.images[1].url}></img>
+                    <img src={item.images[1].url} className="releases img"></img>
                   </div>
                 </div>
               </div>

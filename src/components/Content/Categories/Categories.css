@@ -2,3 +2,13 @@
     margin: 10px;
     background: linear-gradient(135deg, #ada9a9 0%,#b26c73 100%);
 }
+
+.col-2 {
+    display: grid;
+}
+
+@media screen and(max-width:800px){
+    h5.card-title {
+        font-size: smaller;
+} 
+}

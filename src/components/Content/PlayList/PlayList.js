@@ -41,7 +41,7 @@ function PlayList() {
         <div className="row">
           {data.map((item, index) => {
             return (
-              <div className="col-4" key={index}>
+              <div className="col-4 playlist" key={index}>
                 <div className="card playlist">
                   <div className="card-body">
                     <img src={item.images[0].url} className="playlistimg"></img>

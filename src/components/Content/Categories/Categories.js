@@ -45,7 +45,7 @@ function Categories() {
               <div className="col-2" key={index}>
                 <div className="card categories">
                   <div className="card-body">
-                    <h5 className="card-title" style={{ fontWeight: "bold" }}>
+                    <h5 className="card-title" >
                       {item}
                     </h5>
                   </div>
