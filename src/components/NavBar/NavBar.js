@@ -13,12 +13,14 @@ function Navbar() {
           >
             Spotify Project
           </NavLink>
-          <NavLink to="/PlayList">
-            <button className="btn btn-primary">Playlist</button>
-          </NavLink>
-          <NavLink to="/Categories">
-            <button className="btn btn-primary">Categories</button>
-          </NavLink>
+          <div className="buttons">
+            <NavLink to="/PlayList">
+              <button className="btn btn-primary">Playlist</button>
+            </NavLink>
+            <NavLink to="/Categories">
+              <button className="btn btn-primary">Categories</button>
+            </NavLink>
+          </div>
         </nav>
       </div>
     </>
