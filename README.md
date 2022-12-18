@@ -1,4 +1,4 @@
-Here is the link !!! [GitHub Pages](signumtte-spotifyproject.netlify.app).
+[Here is the link !!! ](signumtte-spotifyproject.netlify.app).
 
 <hr>
 
